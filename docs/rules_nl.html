@@ -11,7 +11,6 @@
       --bg2:#0c2a4a;
       --neon1:#ff3fd1;
       --neon2:#23d5ff;
-      --neon3:#ffe86b;
       --card:#0f1022cc;
       --text:#f5f7ff;
       --muted:#b9c2ff;
@@ -20,8 +19,6 @@
     }
 
     *{ box-sizing:border-box; }
-    html, body{ height:100%; }
-
     body{
       margin:0;
       padding: 24px 12px 40px;
@@ -30,45 +27,17 @@
       background:
         radial-gradient(1200px 700px at 20% 15%, rgba(255,63,209,0.22), transparent 55%),
         radial-gradient(900px 600px at 85% 30%, rgba(35,213,255,0.22), transparent 55%),
-        radial-gradient(800px 500px at 60% 90%, rgba(255,232,107,0.14), transparent 60%),
         linear-gradient(135deg, var(--bg1), var(--bg2));
-      overflow-x:hidden;
     }
 
-    .grid{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:0.18;
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,0.15) 55%, rgba(0,0,0,0));
-    }
-
-    .wrapper{ max-width: 860px; margin: 0 auto; position:relative; z-index:1; }
+    .wrapper{ max-width: 860px; margin: 0 auto; }
 
     header{ text-align:center; margin-bottom: 18px; }
 
-    .tagline{
-      display:inline-flex;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.18);
-      background: rgba(15,16,34,0.35);
-      backdrop-filter: blur(10px);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
     h1{
       margin: 16px 0 6px;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      text-shadow:
-        0 0 10px rgba(255,63,209,0.45),
-        0 0 18px rgba(35,213,255,0.25);
+      font-size: 2.4rem;
+      text-shadow: 0 0 10px rgba(255,63,209,0.45);
     }
 
     .card{
@@ -116,9 +85,8 @@
 
     ul, ol{ padding-left: 20px; }
 
-    /* Scorecard visual */
     .scorecard{
-      margin: 14px 0 18px;
+      margin: 16px 0 20px;
       text-align:center;
     }
 
@@ -127,30 +95,6 @@
       border-radius: 12px;
       border:1px solid rgba(255,255,255,0.14);
       background:#fff;
-    }
-
-    .scorecard figcaption{
-      margin-top:6px;
-      font-size:0.85rem;
-      color: var(--muted);
-    }
-
-    .nav{
-      margin-top: 20px;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
-      color: rgba(245,247,255,0.92);
-      font-weight:700;
     }
 
     footer{
@@ -163,12 +107,10 @@
 </head>
 
 <body>
-<div class="grid"></div>
-
 <div class="wrapper">
   <header>
-    <div class="tagline">🃏 Hatsa – slagenspel · NL</div>
     <h1>Hatsa – Spelregels</h1>
+    <p>Nederlandse versie</p>
   </header>
 
   <main class="card">
@@ -177,103 +119,111 @@
     <!-- Stap 1 -->
     <h2><span class="section-number">1</span>Doel</h2>
     <p>
-      Het doel van Hatsa is om zoveel mogelijk punten te behalen door per speelronde
-      correct te voorspellen hoeveel slagen je gaat maken.
+      Het behalen van zoveel mogelijk punten door te voorspellen hoeveel slagen je per speelronde zal maken.
     </p>
 
     <!-- Stap 2 -->
-    <h2><span class="section-number">2</span>Het begin</h2>
-    <p>Bepaal vooraf:</p>
-    <ul>
-      <li>Het aantal rondes per spel</li>
-      <li>Het aantal kaarten per ronde</li>
-    </ul>
+    <h2><span class="section-number">2</span>Hatsa in het kort</h2>
     <p>
-      Bijvoorbeeld: <strong>2–4–6–8–9–7–5–3–1</strong>
+      Het spel bestaat uit verschillende speelrondes. Het aantal kaarten per speelronde verschilt
+      (loopt op per ronde en loopt daarna weer af). De spelers maken per spelronde slagen met de kaarten.
     </p>
 
-    <!-- Scorecard visual -->
+    <!-- Scoreformulier visual -->
     <figure class="scorecard">
       <img src="assets/scorecard.png" alt="Voorbeeld scoreformulier Hatsa" />
-      <figcaption>Voorbeeld van een scoreformulier</figcaption>
     </figure>
 
     <!-- Stap 3 -->
-    <h2><span class="section-number">3</span>Score bijhouden</h2>
-    <p>
-      Maak een scoreformulier met de namen van alle spelers bovenaan en de rondes
-      links. Per ronde noteer je de behaalde punten.
-    </p>
+    <h2><span class="section-number">3</span>Het begin</h2>
+    <p>Bepaal:</p>
+    <ul>
+      <li>het aantal rondes per spel</li>
+      <li>het aantal kaarten per ronde</li>
+    </ul>
+    <p>(bv. 2-4-6-8-9-7-5-3-1)</p>
 
     <!-- Stap 4 -->
     <h2><span class="section-number">4</span>Delen</h2>
     <p>
-      Bepaal de deler door iedereen één open kaart te geven.
-      Wie de laagste kaart heeft, deelt.
+      Bepaal wie de deler van de eerste ronde is door iedereen een open kaart te geven.
+      Wie de laagste kaart krijgt is de deler.
     </p>
+    <p>De deler:</p>
     <ul>
-      <li>De deler geeft iedereen het juiste aantal kaarten</li>
-      <li>Draait één kaart open: dit is de <strong>Hatsa (troef)</strong></li>
-      <li>Geeft iedere speler vier actiekaarten</li>
+      <li>geeft iedere speler het aantal kaarten voor de eerste ronde</li>
+      <li>draait de bovenste kaart van het deck (overgebleven kaarten): dat is de Hatsa (troef)</li>
+      <li>geeft iedere speler vier actiekaarten</li>
     </ul>
 
     <!-- Stap 5 -->
     <h2><span class="section-number">5</span>Actiekaarten</h2>
     <p>
-      Om de beurt mogen spelers vóór het bieden een actiekaart spelen.
-      De speler links van de deler begint.
-    </p>
-    <p>
-      Elke speler moet aan het einde van het spel <strong>3 van de 4 actiekaarten</strong>
-      hebben gespeeld.
+      Iedere speler zegt om de beurt of hij/zij voor deze ronde een actiekaart naar keuze wil spelen
+      (iedere speler moet aan het einde van het spel drie van de vier actiekaarten hebben gespeeld).
+      De speler links van de deler begint, daarna met de klok mee.
     </p>
 
     <!-- Stap 6 -->
     <h2><span class="section-number">6</span>Bieden</h2>
     <p>
-      Iedere speler voorspelt hoeveel slagen hij of zij denkt te maken.
-      Iedereen legt tegelijk het aantal vingers neer (aftellen: 1–2–3).
+      Iedere speler bedenkt het aantal slagen dat hij/zij deze ronde denkt te zullen maken.
+      Alle spelers leggen tegelijk het aantal vingers van hun voorspelling op tafel
+      (aftellen: 1-2-3)
     </p>
 
     <!-- Stap 7 -->
-    <h2><span class="section-number">7</span>Controle</h2>
+    <h2><span class="section-number">7</span></h2>
     <p>
-      Is de som van alle biedingen gelijk aan het aantal kaarten in de ronde?
-      Dan verandert de deler.
+      Als het totaal van geboden slagen gelijk is aan het aantal kaarten van de ronde
+      moet de deler veranderen
+      (bv. ronde van vier kaarten, bieding: 1-0-1-2=4).
     </p>
 
     <!-- Stap 8 -->
     <h2><span class="section-number">8</span>Spelen</h2>
     <p>
-      De speler links van de deler komt uit.
-      Iedereen moet kleur bekennen indien mogelijk.
+      Speler links van de deler komt uit met een kaart naar keuze (bv. groen, Palm).
+      Spelers leggen op volgorde (met de klok mee) een kaart bij in dezelfde kleur.
+      De hoogste wint de slag.
     </p>
-    <ul>
-      <li>Hoogste kaart van de gevraagde kleur wint</li>
-      <li>Hatsa-kaarten winnen altijd van andere kleuren</li>
-    </ul>
+    <p>
+      Als een speler de kleur van uitkomst niet heeft, mag deze een andere kleur bijleggen
+      of een Hatsa-kaart spelen. De speler met de (hoogste) Hatsa-kaart wint de slag.
+    </p>
 
     <!-- Stap 9 -->
-    <h2><span class="section-number">9</span>Punten noteren</h2>
-    <ul>
-      <li><strong>Exact goed:</strong> 10 punten + 5 per behaalde slag</li>
-      <li><strong>Afwijking:</strong> -5 punten per slag verschil</li>
-    </ul>
+    <h2><span class="section-number">9</span></h2>
     <p>
-      Verwerk de score door deze op te tellen of af te trekken van de vorige ronde.
+      De speler die de slag heeft gewonnen komt uit voor de volgende slag.
+      Dit wordt herhaald tot de kaarten op zijn. Dan is de ronde voorbij.
     </p>
 
     <!-- Stap 10 -->
-    <h2><span class="section-number">10</span>Einde van het spel</h2>
+    <h2><span class="section-number">10</span>Punten noteren</h2>
+    <ul>
+      <li>
+        aantal slagen behaald zoals voorspeld:
+        10 punten + aantal slagen
+        (bv. 2 slagen voorspeld, 2 slagen behaald = 20 punten, 10 plus 2 x 5)
+      </li>
+      <li>
+        aantal slagen lager of hoger dan voorspeld:
+        per slag vijf punten aftrek
+        (bv. 2 slagen voorspeld, 3 slagen behaald = -5 punten)
+      </li>
+    </ul>
     <p>
-      Na de laatste ronde is het spel afgelopen.
-      De speler met de hoogste score wint.
+      En verwerk de score per ronde door de punten per speler op te tellen
+      of af te trekken van de score van de vorige ronde.
     </p>
 
-    <div class="nav">
-      <a href="index.html">← Terug naar taalkeuze</a>
-      <a href="rules_en.html">EN version</a>
-    </div>
+    <!-- Einde -->
+    <h2><span class="section-number">11</span>Einde van het spel</h2>
+    <p>
+      Als alle rondes zijn gespeeld is het spel afgelopen.
+      De speler met de hoogste score wint.
+    </p>
   </main>
 
   <footer>© Hatsa Game – All rights reserved</footer>
