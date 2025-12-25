@@ -18,8 +18,10 @@
       --shadow: 0 12px 40px rgba(0,0,0,0.45);
       --radius: 18px;
     }
+
     *{ box-sizing:border-box; }
     html, body{ height:100%; }
+
     body{
       margin:0;
       padding: 24px 12px 40px;
@@ -32,222 +34,249 @@
         linear-gradient(135deg, var(--bg1), var(--bg2));
       overflow-x:hidden;
     }
+
     .grid{
-      position:fixed; inset:0; pointer-events:none; opacity:0.18;
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:0.18;
       background-image:
         linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
       background-size: 56px 56px;
       mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,0.15) 55%, rgba(0,0,0,0));
-      z-index:0;
     }
-    .wrapper{ position:relative; z-index:1; max-width: 860px; margin: 0 auto; }
-    header{ text-align:center; margin-bottom: 18px; padding-top: 10px; }
+
+    .wrapper{ max-width: 860px; margin: 0 auto; position:relative; z-index:1; }
+
+    header{ text-align:center; margin-bottom: 18px; }
+
     .tagline{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      gap:10px;
       padding:10px 14px;
-      border:1px solid rgba(255,255,255,0.18);
       border-radius:999px;
+      border:1px solid rgba(255,255,255,0.18);
       background: rgba(15,16,34,0.35);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
-      font-size: 0.92rem;
       color: var(--muted);
+      font-size: 0.9rem;
     }
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      padding: 2px 8px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: rgba(245,247,255,0.92);
-      font-size: 0.92rem;
-      display:inline-block;
+
+    h1{
+      margin: 16px 0 6px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      text-shadow:
+        0 0 10px rgba(255,63,209,0.45),
+        0 0 18px rgba(35,213,255,0.25);
     }
-    header h1{
-      margin: 18px 0 6px;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      letter-spacing: 0.5px;
-      text-shadow: 0 0 10px rgba(255,63,209,0.45), 0 0 18px rgba(35,213,255,0.25);
-    }
-    header p{ margin:0; color: rgba(245,247,255,0.85); font-size: 1rem; }
 
     .card{
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.14);
       border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
       padding: 22px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
+
     .neonline{
-      height: 2px; width: 100%; border-radius: 999px;
-      background: linear-gradient(90deg, transparent, rgba(255,63,209,0.9), rgba(35,213,255,0.9), transparent);
-      opacity:0.75; margin: 10px 0 16px;
+      height:2px;
+      margin: 10px 0 16px;
+      background: linear-gradient(90deg, transparent, var(--neon1), var(--neon2), transparent);
+      opacity:0.75;
     }
 
     h2{
-      font-size: 1.12rem;
-      margin: 18px 0 8px;
       display:flex;
       align-items:center;
       gap:10px;
-      letter-spacing: 0.2px;
+      margin: 20px 0 8px;
+      font-size: 1.1rem;
     }
+
     .section-number{
-      display:inline-flex;
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      display:flex;
       align-items:center;
       justify-content:center;
-      width: 26px; height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: linear-gradient(135deg, rgba(255,63,209,0.85), rgba(35,213,255,0.85));
-      color: #071018;
-      font-weight: 900;
-      font-size: 0.85rem;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
-      flex: 0 0 auto;
+      font-weight:900;
+      font-size:0.85rem;
+      background: linear-gradient(135deg, var(--neon1), var(--neon2));
+      color:#071018;
     }
 
-    p{ font-size: 1rem; line-height: 1.6; margin: 6px 0 10px; color: rgba(245,247,255,0.92); }
-    ul, ol{ margin: 6px 0 12px; padding-left: 20px; line-height: 1.6; color: rgba(245,247,255,0.92); }
-    li + li{ margin-top: 4px; }
+    p, li{
+      line-height:1.6;
+      font-size:1rem;
+      color: rgba(245,247,255,0.92);
+    }
 
-    .callout{
-      border-radius: 14px;
-      padding: 12px 14px;
-      border: 1px dashed rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.16);
-      color: rgba(245,247,255,0.9);
-      margin: 12px 0 4px;
+    ul, ol{ padding-left: 20px; }
+
+    /* Scorecard visual */
+    .scorecard{
+      margin: 14px 0 18px;
+      text-align:center;
+    }
+
+    .scorecard img{
+      max-width:100%;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:#fff;
+    }
+
+    .scorecard figcaption{
+      margin-top:6px;
+      font-size:0.85rem;
+      color: var(--muted);
     }
 
     .nav{
-      margin-top: 18px;
+      margin-top: 20px;
       display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 10px;
+      justify-content:space-between;
       flex-wrap:wrap;
-      color: rgba(185,194,255,0.9);
-      font-size: 0.95rem;
+      gap:10px;
     }
+
     .nav a{
       text-decoration:none;
-      color: rgba(245,247,255,0.92);
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.16);
       background: rgba(255,255,255,0.06);
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight: 700;
+      color: rgba(245,247,255,0.92);
+      font-weight:700;
     }
-    .nav a:hover{ background: rgba(255,255,255,0.10); }
 
-    footer{ text-align:center; margin-top: 16px; font-size: 0.85rem; color: rgba(185,194,255,0.85); }
-    @media (max-width: 600px){ .card{ padding: 18px; } }
+    footer{
+      margin-top: 16px;
+      text-align:center;
+      font-size:0.85rem;
+      color: rgba(185,194,255,0.85);
+    }
   </style>
 </head>
 
 <body>
-  <div class="grid"></div>
+<div class="grid"></div>
 
-  <div class="wrapper">
-    <header>
-      <div class="tagline">🃏 <span>Hatsa – slagenspel</span> <span class="kbd">NL</span></div>
-      <h1>Hatsa – Spelregels</h1>
-      <p>Nederlandse versie</p>
-    </header>
+<div class="wrapper">
+  <header>
+    <div class="tagline">🃏 Hatsa – slagenspel · NL</div>
+    <h1>Hatsa – Spelregels</h1>
+  </header>
 
-    <main class="card">
-      <div class="neonline"></div>
+  <main class="card">
+    <div class="neonline"></div>
 
-      <h2><span class="section-number">1</span>Doel van het spel</h2>
-      <p>
-        In Hatsa probeer je in elke ronde exact te voorspellen hoeveel slagen je gaat halen.
-        Hoe vaker je precies goed zit, hoe meer punten je scoort. De speler met de hoogste totaalscore wint.
-      </p>
+    <!-- Stap 1 -->
+    <h2><span class="section-number">1</span>Doel</h2>
+    <p>
+      Het doel van Hatsa is om zoveel mogelijk punten te behalen door per speelronde
+      correct te voorspellen hoeveel slagen je gaat maken.
+    </p>
 
-      <h2><span class="section-number">2</span>Scoreformulier en punten bijhouden</h2>
-      <p>Maak vóór de start een scoreformulier om de punten bij te houden.</p>
-      <ul>
-        <li>Schrijf de speler-namen bovenaan (3-6 spelers).</li>
-        <li>Zet de rondes onder elkaar (van laag naar hoog en weer terug).</li>
-        <li>Maak 2 verticale kolommen per speler, 1 voor de voorspelling en 1 voor het aantal punten.</li>
-        <li>Noteer per ronde de score van iedere speler.</li>
-        <li>Tel aan het einde alles op: hoogste totaal wint.</li>
-      </ul>
+    <!-- Stap 2 -->
+    <h2><span class="section-number">2</span>Het begin</h2>
+    <p>Bepaal vooraf:</p>
+    <ul>
+      <li>Het aantal rondes per spel</li>
+      <li>Het aantal kaarten per ronde</li>
+    </ul>
+    <p>
+      Bijvoorbeeld: <strong>2–4–6–8–9–7–5–3–1</strong>
+    </p>
 
-      <h2><span class="section-number">3</span>Kaarten en kaartwaarden</h2>
-      <p>
-        Het Hatsa-deck bestaat uit meerdere kleuren. Elke kleur bevat kaarten met waarden
-        1 t/m 9 en E, D, C, B, A. A is de hoogste kaart.
-      </p>
-      <p>
-        Je moet altijd kleur bekennen. De hoogste kaart in de gevraagde kleur wint de slag, tenzij er een <strong>Hatsa kaart</strong> wordt gespeeld:
-        een <strong>Hatsa kaart</strong> wint altijd van andere kleuren.
-      </p>
+    <!-- Scorecard visual -->
+    <figure class="scorecard">
+      <img src="assets/scorecard.png" alt="Voorbeeld scoreformulier Hatsa" />
+      <figcaption>Voorbeeld van een scoreformulier</figcaption>
+    </figure>
 
-      <h2><span class="section-number">4</span>Voorbereiding</h2>
-      <ol>
-        <li>Kies een deler (bijvoorbeeld steen–papier–schaar).</li>
-        <li>Kies hoeveel rondes je gaat spelen, je kan ook even naar boven en oneven naar beneden. 1 - 12 - 1 duurt ongeveer 45 minuten.</li>
-        <li>Schud het deck.</li>
-        <li>Deel per ronde het juiste aantal kaarten uit.</li>
-        <li>Elke speler ontvangt een actiekaart in het begin, en een actiekaart op de helft.</li>
-      </ol>
+    <!-- Stap 3 -->
+    <h2><span class="section-number">3</span>Score bijhouden</h2>
+    <p>
+      Maak een scoreformulier met de namen van alle spelers bovenaan en de rondes
+      links. Per ronde noteer je de behaalde punten.
+    </p>
 
-      <h2><span class="section-number">5</span>Rondeverloop</h2>
-      <ol>
-        <li><strong>Delen:</strong> spelers krijgen hun kaarten.</li>
-        <li><strong>Hatsa kaart bepalen:</strong> draai de bovenste kaart van het deck open; deze kleur is de Hatsa kaart-kleur van de ronde.</li>
-        <li><strong>Actiekaart-moment:</strong> spelers mogen kiezen of ze hun actiekaart inzetten (vóór het voorspellen).</li>
-        <li><strong>Voorspellen:</strong> aftellen 3–2–1 en vingers opsteken voor je voorspelling.</li>
-        <li><strong>Slagen spelen:</strong> kleur bekennen indien mogelijk; hoogste kaart of hoogste Hatsa kaart wint.</li>
-        <li><strong>Haal je voorspelling:</strong> gebruik je hoge kaarten en Hatsa kaarten om het aantal slagen te halen wat je hebt voorspeld, lukt dit? Dan pak je punten!</li>
-      </ol>
+    <!-- Stap 4 -->
+    <h2><span class="section-number">4</span>Delen</h2>
+    <p>
+      Bepaal de deler door iedereen één open kaart te geven.
+      Wie de laagste kaart heeft, deelt.
+    </p>
+    <ul>
+      <li>De deler geeft iedereen het juiste aantal kaarten</li>
+      <li>Draait één kaart open: dit is de <strong>Hatsa (troef)</strong></li>
+      <li>Geeft iedere speler vier actiekaarten</li>
+    </ul>
 
-      <h2><span class="section-number">6</span>Actiekaarten</h2>
-      <p>
-        Elke speler ontvangt een willekeurige actiekaart in het begin van het spel, en op de helft (als je tot 10 speelt na ronde 10). Actiekaarten zijn eenmalige speciale acties
-        die je alleen mag gebruiken <strong>vóór het voorspellen</strong>.
-      </p>
-      <p>Tijdens het actiekaart-moment:</p>
-      <ul>
-        <li>De speler links van de deler begint.</li>
-        <li>Met de klok mee kiest iedere speler of hij zijn actiekaart inzet of bewaart.</li>
-        <li>Gebruik is optioneel: als jouw actiekaart geen voordeel biedt, kun je hem bewaren.</li>
-        <li>Wanneer je een actiekaart gebruikt, voer je het effect direct uit. De kaart gaat daarna uit het spel.</li>
-      </ul>
-      <div class="callout">De werking van elke actiekaart staat op de kaart zelf.</div>
+    <!-- Stap 5 -->
+    <h2><span class="section-number">5</span>Actiekaarten</h2>
+    <p>
+      Om de beurt mogen spelers vóór het bieden een actiekaart spelen.
+      De speler links van de deler begint.
+    </p>
+    <p>
+      Elke speler moet aan het einde van het spel <strong>3 van de 4 actiekaarten</strong>
+      hebben gespeeld.
+    </p>
 
-      <h2><span class="section-number">7</span>Hoe voorspellen?</h2>
-      <p>
-        Analyseer je hand op hoge kaarten, Hatsa kaarten en verdeling. Bedenk hoeveel slagen realistisch zijn
-        en hoeveel risico je wilt nemen.
-      </p>
+    <!-- Stap 6 -->
+    <h2><span class="section-number">6</span>Bieden</h2>
+    <p>
+      Iedere speler voorspelt hoeveel slagen hij of zij denkt te maken.
+      Iedereen legt tegelijk het aantal vingers neer (aftellen: 1–2–3).
+    </p>
 
-      <h2><span class="section-number">8</span>Puntentelling</h2>
-      <p><strong>Exact goed voorspeld:</strong> 10 punten + 5 per behaalde slag.</p>
-      <p><strong>Niet goed:</strong> geen bonus en -5 punten per verschil.</p>
-      <p class="muted">
-        Voorbeeld: voorspeld 3, gehaald 2 → -5 punten. Voorspeld 2, gehaald 2 → +20 punten.
-      </p>
+    <!-- Stap 7 -->
+    <h2><span class="section-number">7</span>Controle</h2>
+    <p>
+      Is de som van alle biedingen gelijk aan het aantal kaarten in de ronde?
+      Dan verandert de deler.
+    </p>
 
-      <h2><span class="section-number">9</span>Einde van het spel</h2>
-      <p>
-        Na de laatste ronde telt iedereen zijn punten op. De hoogste score wint.
-      </p>
+    <!-- Stap 8 -->
+    <h2><span class="section-number">8</span>Spelen</h2>
+    <p>
+      De speler links van de deler komt uit.
+      Iedereen moet kleur bekennen indien mogelijk.
+    </p>
+    <ul>
+      <li>Hoogste kaart van de gevraagde kleur wint</li>
+      <li>Hatsa-kaarten winnen altijd van andere kleuren</li>
+    </ul>
 
-      <div class="nav">
-        <a href="index.html">← Terug naar taalkeuze</a>
-        <a href="rules_en.html">EN version</a>
-      </div>
-    </main>
+    <!-- Stap 9 -->
+    <h2><span class="section-number">9</span>Punten noteren</h2>
+    <ul>
+      <li><strong>Exact goed:</strong> 10 punten + 5 per behaalde slag</li>
+      <li><strong>Afwijking:</strong> -5 punten per slag verschil</li>
+    </ul>
+    <p>
+      Verwerk de score door deze op te tellen of af te trekken van de vorige ronde.
+    </p>
 
-    <footer>© Hatsa Game – All rights reserved</footer>
-  </div>
+    <!-- Stap 10 -->
+    <h2><span class="section-number">10</span>Einde van het spel</h2>
+    <p>
+      Na de laatste ronde is het spel afgelopen.
+      De speler met de hoogste score wint.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Terug naar taalkeuze</a>
+      <a href="rules_en.html">EN version</a>
+    </div>
+  </main>
+
+  <footer>© Hatsa Game – All rights reserved</footer>
+</div>
 </body>
 </html>
