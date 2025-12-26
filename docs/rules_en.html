@@ -11,15 +11,14 @@
       --bg2:#0c2a4a;
       --neon1:#ff3fd1;
       --neon2:#23d5ff;
-      --neon3:#ffe86b;
       --card:#0f1022cc;
       --text:#f5f7ff;
       --muted:#b9c2ff;
       --shadow: 0 12px 40px rgba(0,0,0,0.45);
       --radius: 18px;
     }
+
     *{ box-sizing:border-box; }
-    html, body{ height:100%; }
     body{
       margin:0;
       padding: 24px 12px 40px;
@@ -28,226 +27,232 @@
       background:
         radial-gradient(1200px 700px at 20% 15%, rgba(255,63,209,0.22), transparent 55%),
         radial-gradient(900px 600px at 85% 30%, rgba(35,213,255,0.22), transparent 55%),
-        radial-gradient(800px 500px at 60% 90%, rgba(255,232,107,0.14), transparent 60%),
         linear-gradient(135deg, var(--bg1), var(--bg2));
-      overflow-x:hidden;
     }
-    .grid{
-      position:fixed; inset:0; pointer-events:none; opacity:0.18;
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,0.15) 55%, rgba(0,0,0,0));
-      z-index:0;
+
+    .wrapper{ max-width: 860px; margin: 0 auto; }
+
+    header{ text-align:center; margin-bottom: 18px; }
+
+    h1{
+      margin: 16px 0 6px;
+      font-size: 2.4rem;
+      text-shadow: 0 0 10px rgba(255,63,209,0.45);
     }
-    .wrapper{ position:relative; z-index:1; max-width: 860px; margin: 0 auto; }
-    header{ text-align:center; margin-bottom: 18px; padding-top: 10px; }
-    .tagline{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
-      border:1px solid rgba(255,255,255,0.18);
-      border-radius:999px;
-      background: rgba(15,16,34,0.35);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      backdrop-filter: blur(10px);
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      padding: 2px 8px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: rgba(245,247,255,0.92);
-      font-size: 0.92rem;
-      display:inline-block;
-    }
-    header h1{
-      margin: 18px 0 6px;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      letter-spacing: 0.5px;
-      text-shadow: 0 0 10px rgba(255,63,209,0.45), 0 0 18px rgba(35,213,255,0.25);
-    }
-    header p{ margin:0; color: rgba(245,247,255,0.85); font-size: 1rem; }
 
     .card{
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.14);
       border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
       padding: 22px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
+
     .neonline{
-      height: 2px; width: 100%; border-radius: 999px;
-      background: linear-gradient(90deg, transparent, rgba(255,63,209,0.9), rgba(35,213,255,0.9), transparent);
-      opacity:0.75; margin: 10px 0 16px;
+      height:2px;
+      margin: 10px 0 16px;
+      background: linear-gradient(90deg, transparent, var(--neon1), var(--neon2), transparent);
+      opacity:0.75;
     }
 
     h2{
-      font-size: 1.12rem;
-      margin: 18px 0 8px;
       display:flex;
       align-items:center;
       gap:10px;
-      letter-spacing: 0.2px;
+      margin: 20px 0 8px;
+      font-size: 1.1rem;
     }
+
     .section-number{
-      display:inline-flex;
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      display:flex;
       align-items:center;
       justify-content:center;
-      width: 26px; height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: linear-gradient(135deg, rgba(255,63,209,0.85), rgba(35,213,255,0.85));
-      color: #071018;
-      font-weight: 900;
-      font-size: 0.85rem;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+      font-weight:900;
+      font-size:0.85rem;
+      background: linear-gradient(135deg, var(--neon1), var(--neon2));
+      color:#071018;
       flex: 0 0 auto;
     }
 
-    p{ font-size: 1rem; line-height: 1.6; margin: 6px 0 10px; color: rgba(245,247,255,0.92); }
-    ul, ol{ margin: 6px 0 12px; padding-left: 20px; line-height: 1.6; color: rgba(245,247,255,0.92); }
-    li + li{ margin-top: 4px; }
-
-    .callout{
-      border-radius: 14px;
-      padding: 12px 14px;
-      border: 1px dashed rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.16);
-      color: rgba(245,247,255,0.9);
-      margin: 12px 0 4px;
-    }
-
-    .nav{
-      margin-top: 18px;
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 10px;
-      flex-wrap:wrap;
-      color: rgba(185,194,255,0.9);
-      font-size: 0.95rem;
-    }
-    .nav a{
-      text-decoration:none;
+    p, li{
+      line-height:1.6;
+      font-size:1rem;
       color: rgba(245,247,255,0.92);
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight: 700;
     }
-    .nav a:hover{ background: rgba(255,255,255,0.10); }
 
-    footer{ text-align:center; margin-top: 16px; font-size: 0.85rem; color: rgba(185,194,255,0.85); }
-    @media (max-width: 600px){ .card{ padding: 18px; } }
+    ul, ol{ padding-left: 20px; }
+
+    /* Scorecard section */
+    .scorecard-section{
+      margin: 24px 0 28px;
+    }
+
+    .scorecard{
+      margin-top: 10px;
+      text-align:center;
+    }
+
+    .scorecard img{
+      max-width:100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: transparent;
+      display:block;
+      margin: 0 auto;
+    }
+
+    .scorecard figcaption{
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(185,194,255,0.85);
+    }
+
+    footer{
+      margin-top: 16px;
+      text-align:center;
+      font-size:0.85rem;
+      color: rgba(185,194,255,0.85);
+    }
   </style>
 </head>
 
 <body>
-  <div class="grid"></div>
+<div class="wrapper">
+  <header>
+    <h1>Hatsa – Rules</h1>
+    <p>English version</p>
+  </header>
 
-  <div class="wrapper">
-    <header>
-      <div class="tagline">🃏 <span>Hatsa – Trick-taking card game</span> <span class="kbd">EN</span></div>
-      <h1>Hatsa – Game Rules</h1>
-      <p>English version</p>
-    </header>
+  <main class="card">
+    <div class="neonline"></div>
 
-    <main class="card">
-      <div class="neonline"></div>
+    <!-- Step 1 -->
+    <h2><span class="section-number">1</span>Objective</h2>
+    <p>
+      The goal of Hatsa is to score as many points as possible by correctly predicting
+      how many tricks you will win in each round.
+    </p>
 
-      <h2><span class="section-number">1</span>Objective of the Game</h2>
-      <p>
-        In Hatsa, players try to predict exactly how many tricks they will take each round.
-        The more often your prediction is correct, the more points you score.
-        The player with the highest total score wins the game.
-      </p>
+    <!-- Step 2 -->
+    <h2><span class="section-number">2</span>Hatsa in a nutshell</h2>
+    <p>
+      The game consists of multiple rounds. The number of cards per round changes
+      (increasing each round and then decreasing again).
+      In each round, players compete for tricks using their cards.
+    </p>
+    <p>
+      The deck consists of 56 cards. Each suit contains cards with values
+      1 through 9 and E, D, C, B, A.
+      Letter cards outrank number cards, with E being the lowest and A the highest value.
+    </p>
 
-      <h2><span class="section-number">2</span>Scorecard and Tracking Points</h2>
-      <p>Before the game starts, create a scorecard to track points for all players.</p>
-      <ul>
-        <li>Write player names across the top.</li>
-        <li>List rounds vertically (from the lowest round up to the highest and back down).</li>
-        <li>After each round, record each player’s score for that round.</li>
-        <li>Add up all rounds at the end to determine the winner.</li>
-      </ul>
+    <!-- Scorecard section -->
+    <section class="scorecard-section">
+      <h2><span class="section-number">3</span>Scorecard example</h2>
 
-      <h2><span class="section-number">3</span>Cards and Card Values</h2>
-      <p>
-        The Hatsa deck consists of multiple colours. Each colour contains cards with values
-        1 through 9 and E, D, C, B, A. A is the highest card.
-        The highest card in the led suit wins the trick, unless a <strong>Hatsa card</strong> is played –
-        a <strong>Hatsa card</strong> always beats other colours.
-      </p>
+      <figure class="scorecard">
+        <img src="assets/scorecard.svg" alt="Scorecard example" />
+        <figcaption>Example of a scorecard</figcaption>
+      </figure>
+    </section>
 
-      <h2><span class="section-number">4</span>Setup</h2>
-      <ol>
-        <li>Choose a dealer (for example, rock-paper-scissors).</li>
-        <li>Shuffle the deck.</li>
-        <li>Deal the correct number of cards per round (typically 1 up to 12 and back down).</li>
-        <li>Each player receives 1 action card per round.</li>
-      </ol>
+    <!-- Step 4 -->
+    <h2><span class="section-number">4</span>Getting started</h2>
+    <p>Before the game begins, decide:</p>
+    <ul>
+      <li>the total number of rounds</li>
+      <li>the number of cards per round</li>
+    </ul>
+    <p>(for example: 2–4–6–8–9–7–5–3–1)</p>
 
-      <h2><span class="section-number">5</span>Round Structure</h2>
-      <ol>
-        <li><strong>Dealing:</strong> players receive their cards.</li>
-        <li><strong>Determine Hatsa card:</strong> flip the top card of the deck; its colour becomes the Hatsa card colour for the round.</li>
-        <li><strong>Action card phase:</strong> players may use an action card (before predicting).</li>
-        <li><strong>Predicting:</strong> countdown 3-2-1 and reveal predictions using fingers.</li>
-        <li><strong>Playing tricks:</strong> follow suit if possible; the highest card in the led suit or the highest Hatsa card wins.</li>
-        <li><strong>Make your prediction count:</strong> use your high cards and Hatsa cards to win the number of tricks you predicted. Pull it off? Then you score points!</li>
-      </ol>
+    <!-- Step 5 -->
+    <h2><span class="section-number">5</span>Dealing</h2>
+    <p>
+      Determine the dealer for the first round by giving each player one face-up card.
+      The player with the lowest card becomes the dealer.
+    </p>
+    <p>The dealer:</p>
+    <ul>
+      <li>deals the correct number of cards to each player</li>
+      <li>turns over the top card of the remaining deck – this determines the Hatsa (trump)</li>
+      <li>gives each player four action cards</li>
+    </ul>
 
-      <h2><span class="section-number">6</span>Action Cards</h2>
-      <p>
-        Each player receives one random action card. Action cards are single-use special abilities
-        that may only be used <strong>before predicting</strong>.
-      </p>
-      <p>During the action card phase:</p>
-      <ul>
-        <li>The player to the dealer’s left goes first.</li>
-        <li>In clockwise order, players decide whether to use their action card or keep it.</li>
-        <li>Using an action card is optional; if it doesn’t help your hand, you can save it.</li>
-        <li>When an action card is used, resolve the effect immediately and remove it from the game.</li>
-      </ul>
-      <div class="callout">The effect of each action card is written on the card itself.</div>
+    <!-- Step 6 -->
+    <h2><span class="section-number">6</span>Action cards</h2>
+    <p>
+      One by one, players may choose whether they want to play an action card for this round.
+      Each player must have played three of their four action cards by the end of the game.
+      The player to the left of the dealer starts, followed clockwise.
+    </p>
 
-      <h2><span class="section-number">7</span>How to Predict</h2>
-      <p>
-        Analyse your hand based on high cards, Hatsa cards, and distribution across suits.
-        Decide how many tricks you realistically expect to take and how much risk you want to take.
-      </p>
+    <!-- Step 7 -->
+    <h2><span class="section-number">7</span>Bidding</h2>
+    <p>
+      Each player decides how many tricks they expect to win this round.
+      All players reveal their bids simultaneously by showing fingers
+      (countdown: 1–2–3).
+    </p>
 
-      <h2><span class="section-number">8</span>Scoring</h2>
-      <p><strong>Correct prediction:</strong> 10 points + 5 points per trick taken.</p>
-      <p><strong>Incorrect prediction:</strong> no bonus and -5 points per trick difference.</p>
-      <p><strong>Examples:</strong></p>
-      <ul>
-        <li>Predicted 3, took 2 → -5 points</li>
-        <li>Predicted 5, took 2 → -15 points</li>
-      </ul>
+    <!-- Step 8 -->
+    <h2><span class="section-number">8</span></h2>
+    <p>
+      If the total number of bids equals the number of cards in the round,
+      the dealer must change
+      (for example: 4-card round, bids: 1–0–1–2 = 4).
+    </p>
 
-      <h2><span class="section-number">9</span>End of the Game</h2>
-      <p>
-        After the final round, all players add up their points.
-        The player with the highest total score wins.
-      </p>
+    <!-- Step 9 -->
+    <h2><span class="section-number">9</span>Playing the hand</h2>
+    <p>
+      The player to the left of the dealer leads by playing any card.
+      Players follow clockwise and must follow suit if possible.
+      The highest card of the led suit wins the trick.
+    </p>
+    <p>
+      If a player cannot follow suit, they may play any other suit or a Hatsa (trump) card.
+      The highest Hatsa card always wins the trick.
+    </p>
 
-      <div class="nav">
-        <a href="index.html">← Back to language selection</a>
-        <a href="rules_nl.html">NL versie</a>
-      </div>
-    </main>
+    <!-- Step 10 -->
+    <h2><span class="section-number">10</span></h2>
+    <p>
+      The winner of a trick leads the next one.
+      This continues until all cards have been played.
+      The round then ends.
+    </p>
 
-    <footer>© Hatsa Game – All rights reserved</footer>
-  </div>
+    <!-- Step 11 -->
+    <h2><span class="section-number">11</span>Scoring</h2>
+    <ul>
+      <li>
+        <strong>Exact prediction:</strong>
+        10 points plus 5 points per trick won
+        (e.g. predicted 2, won 2 = 20 points).
+      </li>
+      <li>
+        <strong>Incorrect prediction:</strong>
+        minus 5 points for each trick difference
+        (e.g. predicted 2, won 3 = −5 points).
+      </li>
+    </ul>
+    <p>
+      Add or subtract the points from each player’s total score after every round.
+    </p>
+
+    <!-- Step 12 -->
+    <h2><span class="section-number">12</span>End of the game</h2>
+    <p>
+      Once all rounds have been played, the game ends.
+      The player with the highest total score wins.
+    </p>
+  </main>
+
+  <footer>© Hatsa Game – All rights reserved</footer>
+</div>
 </body>
 </html>
