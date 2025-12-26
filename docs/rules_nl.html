@@ -75,6 +75,7 @@
       font-size:0.85rem;
       background: linear-gradient(135deg, var(--neon1), var(--neon2));
       color:#071018;
+      flex: 0 0 auto;
     }
 
     p, li{
@@ -85,16 +86,29 @@
 
     ul, ol{ padding-left: 20px; }
 
+    /* Scorecard section */
+    .scorecard-section{
+      margin: 24px 0 28px;
+    }
+
     .scorecard{
-      margin: 16px 0 20px;
+      margin: 10px 0 0;
       text-align:center;
     }
 
     .scorecard img{
       max-width:100%;
       border-radius: 12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background:#fff;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: transparent; /* IMPORTANT: keeps transparency */
+      display:block;
+      margin: 0 auto;
+    }
+
+    .scorecard figcaption{
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(185,194,255,0.85);
     }
 
     footer{
@@ -132,13 +146,19 @@
       De letters zijn hoger dan de cijfers waarbij E de laagste ‘waarde’ en A de hoogste ‘waarde’ heeft.
     </p>
 
-    <!-- Scoreformulier visual -->
-    <figure class="scorecard">
-      <img src="assets/scorecard.png" alt="Voorbeeld scoreformulier Hatsa" />
-    </figure>
+    <!-- Scorecard section (separate section, between 2 and 3) -->
+    <section class="scorecard-section">
+      <h2><span class="section-number">3</span>Scorecard voorbeeld</h2>
 
-    <!-- Stap 3 -->
-    <h2><span class="section-number">3</span>Het begin</h2>
+      <figure class="scorecard">
+        <!-- PLACEHOLDER: replace with your final file (svg or png) -->
+        <img src="assets/scorecard.svg" alt="Scorecard voorbeeld" />
+        <figcaption>Scorecard voorbeeld</figcaption>
+      </figure>
+    </section>
+
+    <!-- Stap 3 (renumbered to 4 due to scorecard section) -->
+    <h2><span class="section-number">4</span>Het begin</h2>
     <p>Bepaal:</p>
     <ul>
       <li>het aantal rondes per spel</li>
@@ -147,7 +167,7 @@
     <p>(bv. 2-4-6-8-9-7-5-3-1)</p>
 
     <!-- Stap 4 -->
-    <h2><span class="section-number">4</span>Delen</h2>
+    <h2><span class="section-number">5</span>Delen</h2>
     <p>
       Bepaal wie de deler van de eerste ronde is door iedereen een open kaart te geven.
       Wie de laagste kaart krijgt is de deler.
@@ -160,7 +180,7 @@
     </ul>
 
     <!-- Stap 5 -->
-    <h2><span class="section-number">5</span>Actiekaarten</h2>
+    <h2><span class="section-number">6</span>Actiekaarten</h2>
     <p>
       Iedere speler zegt om de beurt of hij/zij voor deze ronde een actiekaart naar keuze wil spelen
       (iedere speler moet aan het einde van het spel drie van de vier actiekaarten hebben gespeeld).
@@ -168,7 +188,7 @@
     </p>
 
     <!-- Stap 6 -->
-    <h2><span class="section-number">6</span>Bieden</h2>
+    <h2><span class="section-number">7</span>Bieden</h2>
     <p>
       Iedere speler bedenkt het aantal slagen dat hij/zij deze ronde denkt te zullen maken.
       Alle spelers leggen tegelijk het aantal vingers van hun voorspelling op tafel
@@ -176,7 +196,7 @@
     </p>
 
     <!-- Stap 7 -->
-    <h2><span class="section-number">7</span></h2>
+    <h2><span class="section-number">8</span></h2>
     <p>
       Als het totaal van geboden slagen gelijk is aan het aantal kaarten van de ronde
       moet de deler veranderen
@@ -184,7 +204,7 @@
     </p>
 
     <!-- Stap 8 -->
-    <h2><span class="section-number">8</span>Spelen</h2>
+    <h2><span class="section-number">9</span>Spelen</h2>
     <p>
       Speler links van de deler komt uit met een kaart naar keuze (bv. groen, Palm).
       Spelers leggen op volgorde (met de klok mee) een kaart bij in dezelfde kleur.
@@ -196,14 +216,14 @@
     </p>
 
     <!-- Stap 9 -->
-    <h2><span class="section-number">9</span></h2>
+    <h2><span class="section-number">10</span></h2>
     <p>
       De speler die de slag heeft gewonnen komt uit voor de volgende slag.
       Dit wordt herhaald tot de kaarten op zijn. Dan is de ronde voorbij.
     </p>
 
     <!-- Stap 10 -->
-    <h2><span class="section-number">10</span>Punten noteren</h2>
+    <h2><span class="section-number">11</span>Punten noteren</h2>
     <ul>
       <li>
         aantal slagen behaald zoals voorspeld:
@@ -222,7 +242,7 @@
     </p>
 
     <!-- Einde -->
-    <h2><span class="section-number">11</span>Einde van het spel</h2>
+    <h2><span class="section-number">12</span>Einde van het spel</h2>
     <p>
       Als alle rondes zijn gespeeld is het spel afgelopen.
       De speler met de hoogste score wint.
